@@ -33,7 +33,7 @@ def load_user(user_id):
 # Home route
 @app.route("/")
 def home():
-    return "Home"
+    return render_template("home.html")
 
 # Register route
 @app.route('/register', methods=["GET", "POST"])
