@@ -1,0 +1,38 @@
+.dishes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dish {
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 10px;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body {
+    margin: 20px;
+    font-family: Arial, serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-day {
+    margin-top: 20px;
+}
+
+.day-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
