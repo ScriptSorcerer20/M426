@@ -41,18 +41,13 @@ def register():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-
         if Users.query.filter_by(username=username).first():
             return render_template("sign_up.html", error="Username already taken!")
-
         hashed_password = generate_password_hash(password, method="pbkdf2:sha256")
-
         new_user = Users(username=username, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-
         return redirect(url_for("login"))
-    
     return render_template("sign_up.html")
 
 # Login route

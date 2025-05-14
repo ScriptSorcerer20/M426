@@ -1,38 +1,65 @@
-.dishes {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.dish {
-    border: 1px solid black;
-    padding: 10px;
-    min-width: 100px;
-    border-radius: 10px;
-}
-
-.date-range {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 body {
     margin: 20px;
-    font-family: Arial, serif;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
+/* Header section with brand color accent */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #b0c4de;
 }
 
+/* Date range input area with soft blue accent */
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    padding: 8px 12px;
+    border: 1px solid #b0c4de;
+    border-radius: 8px;
+}
+
+/* Dish layout container */
+.dishes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Individual dish card with blue-tinted highlight */
+.dish {
+    border: 1px solid #dbe9f4;
+    background-color: #ffffff;
+    padding: 16px;
+    min-width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.dish:hover {
+    transform: translateY(-2px);
+    background-color: #e6f2fb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Menu day spacing */
 .menu-day {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
+/* Day title with accent */
 .day-title {
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: #2a4d7f;
 }
