@@ -1,104 +1,133 @@
 body {
     margin: 20px;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-color: #f4f7fa;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Header section with brand color accent */
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #2a4d7f;
+}
+
+/* Header Bereich */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #b0c4de;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Date range input area with soft blue accent */
-.date-range {
+.nav-controls {
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: #ffffff;
-    padding: 8px 12px;
-    border: 1px solid #b0c4de;
-    border-radius: 8px;
+    flex-grow: 1;
 }
 
-/* Dish layout container */
-.dishes {
+.date-label {
+    font-weight: 500;
+    color: #2a4d7f;
+}
+
+.icon-buttons {
     display: flex;
-    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Buttons gleich groß halten */
+button {
+    padding: 8px 12px;
+    min-width: 40px;
+    aspect-ratio: 1 / 1;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f0f4f9;
+    padding: 8px 12px;
+    border: 1px solid #c3d7e5;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #2a4d7f;
+}
+
+button:hover {
+    background-color: #1e3a5f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background-color: #aab8c5;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Menü-Tage */
+.menu-day {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Tagestitel */
+.day-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 16px;
+    color: #2a4d7f;
+}
+
+/* Dish-Layout sauber in Grid, max 4 nebeneinander */
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px;
 }
 
-/* Individual dish card with blue-tinted highlight */
+/* Gericht-Karte */
 .dish {
-    border: 1px solid #dbe9f4;
     background-color: #ffffff;
     padding: 16px;
-    min-width: 120px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #dbe9f4;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dish:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     background-color: #e6f2fb;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Menu day spacing */
-.menu-day {
-    margin-top: 30px;
-}
+/* Responsive Optimierung */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-/* Day title with accent */
-.day-title {
-    font-weight: 600;
-    font-size: 1.2em;
-    margin-bottom: 12px;
-    color: #2a4d7f;
-}
-
-/* Base button styles */
-button {
-    padding: 10px 16px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #2a4d7f;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Hover state */
-button:hover {
-    background-color: #1e3a5f;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Disabled state */
-button:disabled {
-    background-color: #aab8c5;
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-/* Secondary button variant (if needed) */
-button.secondary {
-    background-color: #e6f2fb;
-    color: #2a4d7f;
-    border: 1px solid #b0c4de;
-}
-
-button.secondary:hover {
-    background-color: #d0e7f7;
+    .date-range {
+        justify-content: center;
+        width: 100%;
+    }
 }
