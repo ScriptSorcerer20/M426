@@ -41,11 +41,20 @@ h3 {
     gap: 10px;
 }
 
+/* General buttons */
 button {
-    padding: 8px 12px;
-    min-width: 40px;
-    aspect-ratio: 1 / 1;
     font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Only icon buttons (in nav) get square shape */
+.icon-buttons button {
+    padding: 8px;
+    aspect-ratio: 1 / 1;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,4 +251,11 @@ img {
     background-color: white;
     color: #2a4d7f;
     border: 1px solid #2a4d7f;
+}
+
+.dish-detail-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2a4d7f;
+    margin-bottom: 12px;
 }
