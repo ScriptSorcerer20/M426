@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -34,6 +34,13 @@ def load_user(user_id):
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/products")
+def products():
+    try:
+        return send_file('Testfiles/product.json', mimetype='application/json')
+    except Exception as e:
+        return str(e), 500
 
 # Register route
 @app.route('/register', methods=["GET", "POST"])
