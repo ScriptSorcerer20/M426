@@ -84,7 +84,18 @@
     transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
+.bestellung {
+    background-color: #2a4d7f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bestellung:hover {
     background-color: white;
     color: #2a4d7f;
     border: 1px solid #2a4d7f;
