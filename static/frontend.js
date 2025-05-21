@@ -15,7 +15,6 @@ function closeOverlay() {
 
 document.querySelectorAll('.dish').forEach(dish => {
     dish.addEventListener('click', () => {
-        // Replace with real data, or add data-attributes to each dish
         const sampleData = {
             image: dish.querySelector('img').src,
             title: dish.querySelector('.dish-title').textContent || 'Titel',

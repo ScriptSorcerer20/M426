@@ -41,11 +41,20 @@ h3 {
     gap: 10px;
 }
 
+/* General buttons */
 button {
-    padding: 8px 12px;
-    min-width: 40px;
-    aspect-ratio: 1 / 1;
     font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Only icon buttons (in nav) get square shape */
+.icon-buttons button {
+    padding: 8px;
+    aspect-ratio: 1 / 1;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,4 +251,61 @@ img {
     background-color: white;
     color: #2a4d7f;
     border: 1px solid #2a4d7f;
+}
+
+.dish-detail-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2a4d7f;
+    margin-bottom: 12px;
+}
+
+.bestellung {
+    background-color: #2a4d7f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0 auto;
+
+}
+
+.bestellung:hover {
+    background-color: white;
+    color: #2a4d7f;
+    border: 1px solid #2a4d7f;
+}
+
+.dish-basket-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2a4d7f;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.dish-in-basket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dbe9f4;
+    border-radius: 12px;
+    padding: 12px;
+    width: 160px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    margin: 10px;
+}
+
+.basket-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px 0;
 }
