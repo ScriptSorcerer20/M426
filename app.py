@@ -35,6 +35,13 @@ def load_user(user_id):
 def home():
     return render_template("index.html")
 
+@app.route("/products")
+def products():
+    try:
+        return send_file('Testfiles/product.json', mimetype='application/json')
+    except Exception as e:
+        return str(e), 500
+
 # Register route
 @app.route('/register', methods=["GET", "POST"])
 def register():
