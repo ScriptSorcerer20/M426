@@ -1,0 +1,109 @@
+{
+    "products": [
+        {
+            "prduct_id": 1,
+            "product_name": "Pommes Frites",
+            "product_description" : "Sehr populär",
+            "product_price": 9.99,
+            "kilocalories": 312,
+            "kilojoules": 1305.41,
+            "allergy": [
+                {
+                    "milk": false,
+                    "gluten": false,
+                    "peanuts": false,
+                    "eggs": false,
+                    "fish": false,
+                    "sesame": false,
+                    "soy": false, 
+                    "wheat": false,
+                    "three_nuts": false
+                }
+            ]
+        },
+        {
+            "prduct_id": 2,
+            "product_name": "Chicken Nuggets",
+            "product_description" : "Sehr populär mit Pommes Frites",
+            "product_price": 5.99,
+            "kilocalories": 296,
+            "kilojoules": 12038.24,
+            "allergy": [
+                {
+                    "milk": true,
+                    "gluten": true,
+                    "peanuts": false,
+                    "eggs": true,
+                    "fish": false,
+                    "sesame": false,
+                    "soy": true, 
+                    "wheat": false,
+                    "three_nuts": false
+                }
+            ]
+        },
+        {
+            "prduct_id": 3,
+            "product_name": "Pizza Margherita",
+            "product_description" : "Italienisches Gericht",
+            "product_price": 14.99,
+            "kilocalories": 958,
+            "kilojoules": 4003.55,
+            "allergy": [
+                {
+                    "milk": true,
+                    "gluten": true,
+                    "peanuts": false,
+                    "eggs": false,
+                    "fish": false,
+                    "sesame": false,
+                    "soy": false, 
+                    "wheat": true,
+                    "three_nuts": false
+                }
+            ]
+        },
+        {
+            "prduct_id": 4,
+            "product_name": "Ceasar Salat",
+            "product_description" : "Salat",
+            "product_price": 7.99,
+            "kilocalories": 470,
+            "kilojoules": 1966.48, 
+            "allergy": [
+                {
+                    "milk": true,
+                    "gluten": true,
+                    "peanuts": false,
+                    "eggs": true,
+                    "fish": true,
+                    "sesame": false,
+                    "soy": false, 
+                    "wheat": true,
+                    "three_nuts": false
+                }
+            ]
+        },
+        {
+            "prduct_id": 5,
+            "product_name": "Bananemüsli",
+            "product_description" : "Ein Müsli mit Bananen",
+            "product_price": 10.99,
+            "kilocalories": 87,
+            "kilojoules": 364.01,
+            "allergy": [
+                {
+                    "milk": true,
+                    "gluten": true,
+                    "peanuts": false,
+                    "eggs": false,
+                    "fish": false,
+                    "sesame": false,
+                    "soy": false, 
+                    "wheat": true,
+                    "three_nuts": true
+                }
+            ]
+        }
+    ]
+}
