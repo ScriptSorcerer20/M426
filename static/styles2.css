@@ -93,10 +93,11 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-self: center;
+    text-align: center;
 }
 
-.bestellung:hover {
-    background-color: white;
-    color: #2a4d7f;
-    border: 1px solid #2a4d7f;
+.dish-in-basket {
+
+
 }
