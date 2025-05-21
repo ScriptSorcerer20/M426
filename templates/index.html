@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../static/styles.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Speisekarte</title>
 </head>
 <body>
@@ -30,7 +29,8 @@
     <div class="day-title">Mo – Datum:</div>
     <div class="dishes">
         <div class="dish">
-            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png" alt="Buddha Bowl mit frischen Zutaten">
+            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png"
+                 alt="Buddha Bowl mit frischen Zutaten">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -38,7 +38,8 @@
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
-            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png" alt="Gegrilltes Hünchen mit Kartoffelstampf">
+            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png"
+                 alt="Gegrilltes Hünchen mit Kartoffelstampf">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -52,7 +53,8 @@
     <div class="day-title">Di – Datum:</div>
     <div class="dishes">
         <div class="dish">
-            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png" alt="Buddha Bowl mit frischen Zutaten">
+            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png"
+                 alt="Buddha Bowl mit frischen Zutaten">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -60,7 +62,8 @@
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
-            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png" alt="Gegrilltes Hünchen mit Kartoffelstampf">
+            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png"
+                 alt="Gegrilltes Hünchen mit Kartoffelstampf">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -74,7 +77,8 @@
     <div class="day-title">Mi – Datum:</div>
     <div class="dishes">
         <div class="dish">
-            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png" alt="Buddha Bowl mit frischen Zutaten">
+            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png"
+                 alt="Buddha Bowl mit frischen Zutaten">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -82,7 +86,8 @@
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
-            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png" alt="Gegrilltes Hünchen mit Kartoffelstampf">
+            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png"
+                 alt="Gegrilltes Hünchen mit Kartoffelstampf">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -96,7 +101,8 @@
     <div class="day-title">Do – Datum:</div>
     <div class="dishes">
         <div class="dish">
-            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png" alt="Buddha Bowl mit frischen Zutaten">
+            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png"
+                 alt="Buddha Bowl mit frischen Zutaten">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -104,7 +110,8 @@
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
-            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png" alt="Gegrilltes Hünchen mit Kartoffelstampf">
+            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png"
+                 alt="Gegrilltes Hünchen mit Kartoffelstampf">
             <div class="dish-title">Titel</div>
         </div>
         <div class="dish">
@@ -118,7 +125,8 @@
     <div class="day-title">Fr – Datum:</div>
     <div class="dishes">
         <div class="dish">
-            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png" alt="Buddha Bowl mit frischen Zutaten">
+            <img src="/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png"
+                 alt="Buddha Bowl mit frischen Zutaten">
             <div class="dish-title">Buddha Bowl</div>
         </div>
         <div class="dish">
@@ -126,7 +134,8 @@
             <div class="dish-title">Chili con Carne</div>
         </div>
         <div class="dish">
-            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png" alt="Gegrilltes Hühnchen mit Kartoffelstampf">
+            <img src="/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png"
+                 alt="Gegrilltes Hühnchen mit Kartoffelstampf">
             <div class="dish-title">Gegrilltes Hühnchen</div>
         </div>
         <div class="dish">
@@ -135,6 +144,23 @@
         </div>
     </div>
 </div>
-
+<div class="dish-overlay hidden" id="dishOverlay">
+    <div class="dish-detail-card">
+        <button class="back-button" onclick="closeOverlay()">Zurück</button>
+        <img src="" alt="Gericht" class="dish-image" id="overlayImage">
+        <h2 class="dish-title" id="overlayTitle">Titel</h2>
+        <p class="dish-description" id="overlayDescription">
+            Beschreibung hier.
+        </p>
+        <ul class="dish-info">
+            <li><strong>Nährstoffe:</strong> <span id="overlayNutrition"></span></li>
+            <li><strong>Allergien:</strong> <span id="overlayAllergies"></span></li>
+            <li><strong>Preis:</strong> <span id="overlayPrice"></span></li>
+            <li><strong>Wartezeit:</strong> <span id="overlayWait"></span></li>
+        </ul>
+        <button class="add-to-cart">zum Warenkorb hinzufügen</button>
+    </div>
+</div>
+<script src="../static/frontend.js"></script>
 </body>
 </html>
