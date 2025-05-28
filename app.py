@@ -38,7 +38,7 @@ def home():
 @app.route("/products")
 def products():
     try:
-        return send_file('Testfiles/product.json', mimetype='application/json')
+        return send_file('/static/json/product.json', mimetype='application/json')
     except Exception as e:
         return str(e), 500
 
