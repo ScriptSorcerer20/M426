@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -35,10 +36,16 @@ def load_user(user_id):
 def home():
     return render_template("index.html")
 
-@app.route("/products")
-def products():
+@app.route("/products/<int:number>")
+def products(number):
+    directory = 'static/json'  # correct directory path
     try:
-        return send_file('/static/json/product.json', mimetype='application/json')
+        files = os.listdir(directory)
+        if number < 0 or number >= len(files):
+            return "Index out of range", 404
+
+        selected_file = os.path.join(directory, files[number])
+        return send_file(selected_file, mimetype='application/json')
     except Exception as e:
         return str(e), 500
 
