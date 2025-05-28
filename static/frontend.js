@@ -1,4 +1,6 @@
-﻿function openOverlay(data) {
+﻿let json_route = "http://127.0.0.1:5000/products/0"
+
+function openOverlay(data) {
     document.getElementById('overlayImage').src = data.image;
     document.getElementById('overlayTitle').textContent = data.title;
     document.getElementById('overlayDescription').textContent = data.description;
@@ -33,3 +35,17 @@ document.addEventListener('keydown', (e) => {
         closeOverlay();
     }
 });
+
+async function title_list(json){
+    let response = await fetch(json)
+    console.log(await response.json())
+}
+
+title_list(json_route).then(r => console.log("successful"))
+/*
+document.querySelectorAll(".dish-title").forEach(title => {
+    title.
+})
+
+ */
+
