@@ -4,6 +4,7 @@
       "day1": [
         {
           "product_id": 1,
+          "date": ":)",
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
@@ -26,6 +27,7 @@
       "day2": [
         {
           "product_id": 1,
+          "date": ":)",
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
@@ -48,6 +50,7 @@
       "day3": [
         {
           "product_id": 1,
+          "date": ":)",
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
@@ -70,6 +73,7 @@
       "day4": [
         {
           "product_id": 1,
+          "date": ":)",
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
@@ -92,6 +96,7 @@
       "day5": [
         {
           "product_id": 1,
+          "date": ":)",
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
