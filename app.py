@@ -38,18 +38,16 @@ def home():
 
 @app.route("/products/<int:number>")
 def products(number):
-    directory = 'static/json'  # correct directory path
+    directory = 'static/json'
     try:
         files = os.listdir(directory)
         if number < 0 or number >= len(files):
             return "Index out of range", 404
-
         selected_file = os.path.join(directory, files[number])
         return send_file(selected_file, mimetype='application/json')
     except Exception as e:
         return str(e), 500
 
-# Register route
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -64,7 +62,6 @@ def register():
         return redirect(url_for("login"))
     return render_template("sign_up.html")
 
-# Login route
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
