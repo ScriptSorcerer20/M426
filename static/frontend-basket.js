@@ -31,15 +31,33 @@ function renderBasket(items) {
         dish.innerHTML = `
             <img src="${item.image}" alt="${item.title}">
             <div class="dish-basket-title">${item.title}</div>
-            <label>
+            <div class="quantity-controls">
+                <button class="quantity-decrease">−</button>
                 <select name="quantity" class="quantity">
                     ${[...Array(9)].map((_, i) => `<option>${i + 1}</option>`).join("")}
                 </select>
-            </label>
+                <button class="quantity-increase">+</button>
+            </div>
             <button class="remove-button">Remove</button>
         `;
         const quantitySelect = dish.querySelector(".quantity");
+        const decreaseBtn = dish.querySelector(".quantity-decrease");
+        const increaseBtn = dish.querySelector(".quantity-increase");
         quantitySelect.addEventListener("change", calculateTotal);
+        decreaseBtn.addEventListener("click", () => {
+            let current = parseInt(quantitySelect.value);
+            if (current > 1) {
+                quantitySelect.value = current - 1;
+                calculateTotal();
+            }
+        });
+        increaseBtn.addEventListener("click", () => {
+            let current = parseInt(quantitySelect.value);
+            if (current < 9) {
+                quantitySelect.value = current + 1;
+                calculateTotal();
+            }
+        });
         dish.querySelector(".remove-button").addEventListener("click", () => {
             const index = basketItems.findIndex(d => d.title === item.title);
             if (index !== -1) {
