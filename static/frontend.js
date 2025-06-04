@@ -1,4 +1,13 @@
 ﻿let json_route = "http://127.0.0.1:5000/products/0"
+let currentPageIndex = 0;
+const indexToRoute = {
+    0: "http://127.0.0.1:5000/products/0",
+    1: "http://127.0.0.1:5000/products/1",
+    2: "http://127.0.0.1:5000/products/2"
+};
+
+const nextPageMap = { 2: 0, 0: 1, 1: 0 };
+const prevPageMap = { 2: 0, 0: 2, 1: 0 };
 
 function openOverlay(data) {
     document.getElementById('overlayImage').src = data.image;
