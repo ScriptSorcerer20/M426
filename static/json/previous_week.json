@@ -1,5 +1,5 @@
 ﻿{
-  "products": [
+  "week": [
     {
       "day1": [
         {
@@ -22,8 +22,29 @@
               "three_nuts": false
             }
           ]
+        },{
+          "product_id": 2,
+          "product_name": "Pommes Frites",
+          "product_description": "Sehr populär",
+          "product_price": 9.99,
+          "kilocalories": 312,
+          "kilojoules": 1305.41,
+          "allergy": [
+            {
+              "milk": false,
+              "gluten": false,
+              "peanuts": false,
+              "eggs": false,
+              "fish": false,
+              "sesame": false,
+              "soy": false,
+              "three_nuts": false
+            }
+          ]
         }
-      ],
+      ]
+    },
+    {
       "day2": [
         {
           "product_id": 1,
@@ -45,8 +66,29 @@
               "three_nuts": false
             }
           ]
+        },{
+          "product_id": 2,
+          "product_name": "Pommes Frites",
+          "product_description": "Sehr populär",
+          "product_price": 9.99,
+          "kilocalories": 312,
+          "kilojoules": 1305.41,
+          "allergy": [
+            {
+              "milk": false,
+              "gluten": false,
+              "peanuts": false,
+              "eggs": false,
+              "fish": false,
+              "sesame": false,
+              "soy": false,
+              "three_nuts": false
+            }
+          ]
         }
-      ],
+      ]
+    },
+    {
       "day3": [
         {
           "product_id": 1,
@@ -68,8 +110,30 @@
               "three_nuts": false
             }
           ]
+        },
+        {
+          "product_id": 2,
+          "product_name": "Pommes Frites",
+          "product_description": "Sehr populär",
+          "product_price": 9.99,
+          "kilocalories": 312,
+          "kilojoules": 1305.41,
+          "allergy": [
+            {
+              "milk": false,
+              "gluten": false,
+              "peanuts": false,
+              "eggs": false,
+              "fish": false,
+              "sesame": false,
+              "soy": false,
+              "three_nuts": false
+            }
+          ]
         }
-      ],
+      ]
+    },
+    {
       "day4": [
         {
           "product_id": 1,
@@ -91,12 +155,52 @@
               "three_nuts": false
             }
           ]
+        },{
+          "product_id": 2,
+          "product_name": "Pommes Frites",
+          "product_description": "Sehr populär",
+          "product_price": 9.99,
+          "kilocalories": 312,
+          "kilojoules": 1305.41,
+          "allergy": [
+            {
+              "milk": false,
+              "gluten": false,
+              "peanuts": false,
+              "eggs": false,
+              "fish": false,
+              "sesame": false,
+              "soy": false,
+              "three_nuts": false
+            }
+          ]
         }
-      ],
+      ]
+    },
+    {
       "day5": [
         {
           "product_id": 1,
           "date": "",
+          "product_name": "Pommes Frites",
+          "product_description": "Sehr populär",
+          "product_price": 9.99,
+          "kilocalories": 312,
+          "kilojoules": 1305.41,
+          "allergy": [
+            {
+              "milk": false,
+              "gluten": false,
+              "peanuts": false,
+              "eggs": false,
+              "fish": false,
+              "sesame": false,
+              "soy": false,
+              "three_nuts": false
+            }
+          ]
+        },{
+          "product_id": 2,
           "product_name": "Pommes Frites",
           "product_description": "Sehr populär",
           "product_price": 9.99,
@@ -119,3 +223,4 @@
     }
   ]
 }
+

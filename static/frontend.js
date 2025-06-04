@@ -1,13 +1,4 @@
 ﻿let json_route = "http://127.0.0.1:5000/products/0"
-let currentPageIndex = 0;
-const indexToRoute = {
-    0: "http://127.0.0.1:5000/products/0",
-    1: "http://127.0.0.1:5000/products/1",
-    2: "http://127.0.0.1:5000/products/2"
-};
-
-const nextPageMap = { 2: 0, 0: 1, 1: 0 };
-const prevPageMap = { 2: 0, 0: 2, 1: 0 };
 
 function openOverlay(data) {
     document.getElementById('overlayImage').src = data.image;
@@ -45,9 +36,38 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-async function title_list(json) {
-    let response = await fetch(json)
-    console.log(await response.json())
+async function title_list(url){
+    let response = await fetch(url)
+    if (response.ok) {
+        let element_index = 0
+
+        let selected_titles = document.querySelectorAll(".dish-title")
+        let json = await response.json();
+        for (day_object of json.week) {
+
+            let day_key = Object.keys(day_object)[0]
+            products = day_object[day_key]
+            let counter = 0
+
+            for (product of products) {
+
+
+
+                if (counter <= products.length) {
+                    console.log(element_index)
+                    let current_title = selected_titles[element_index]
+                    current_title.innerHTML = product.product_name
+                    element_index++
+                    counter++
+                }
+                console.log(counter + "?" + products.length)
+                if (counter === products.length) {
+                    console.log("all products printed")
+                    element_index += products.length
+                }
+            }
+        }
+    }
 }
 
 title_list(json_route).then(r => console.log("successful"))
