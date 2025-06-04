@@ -50,7 +50,26 @@ button {
     border: none;
 }
 
-/* Only icon buttons (in nav) get square shape */
+a {
+    font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2a4d7f;
+}
+
+.icon-buttons a {
+    padding: 8px;
+    aspect-ratio: 1 / 1;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .icon-buttons button {
     padding: 8px;
     aspect-ratio: 1 / 1;
@@ -72,10 +91,22 @@ button {
     color: #2a4d7f;
 }
 
+a:hover{
+    background-color: #1e3a5f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 button:hover {
     background-color: #1e3a5f;
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+a:disabled {
+    background-color: #aab8c5;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 button:disabled {
@@ -285,33 +316,81 @@ img {
     border: 1px solid #2a4d7f;
 }
 
-.dish-basket-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #2a4d7f;
-    text-align: center;
-    margin-top: 8px;
+.basket-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 30px 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    margin-bottom: 30px;
 }
 
 .dish-in-basket {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    border: 1px solid #dbe9f4;
-    border-radius: 12px;
-    padding: 12px;
-    width: 160px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    margin: 10px;
+    background-color: #f9fbfd;
+    border: 1px solid #cbd8e2;
+    border-radius: 16px;
+    padding: 16px;
+    width: 180px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
 }
 
-.basket-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    padding: 20px 0;
+.dish-in-basket:hover {
+    transform: translateY(-4px);
+}
+
+.dish-in-basket img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.dish-basket-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2a4d7f;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.quantity {
+    width: 60px;
+    padding: 6px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    border: 1px solid #2a4d7f;
+    border-radius: 6px;
+}
+
+.remove-button {
+    background-color: #2a4d7f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: white;
+    color: #2a4d7f;
+    border: 1px solid #2a4d7f;
+}
+
+h3 {
+    text-align: center;
+    color: #2a4d7f;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {

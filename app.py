@@ -91,5 +91,9 @@ def logout():
     logout_user()
     return redirect(url_for("home"))
 
+@app.route("/basket", methods=["GET", "POST"])
+def basket():
+    return render_template("/basket.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
