@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, send_file
+from flask import Flask, render_template, request, url_for, redirect, send_file, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -71,6 +71,7 @@ def login():
         user = Users.query.filter_by(username=username).first()
 
         if user and check_password_hash(user.password, password):
+            session['user_id'] = user.id
             login_user(user)
             return redirect(url_for("dashboard"))
         else:
@@ -94,6 +95,43 @@ def logout():
 @app.route("/basket", methods=["GET", "POST"])
 def basket():
     return render_template("/basket.html")
+
+@app.route('/settings')
+@login_required
+def settings():
+    user_id = session.get('user_id')
+    if not user_id:
+        return redirect(url_for('login'))
+
+    user = Users.query.get(user_id)
+    return render_template('account_settings.html', user=user)
+
+@app.route('/settings', methods=["POST"])
+@login_required
+def change_password():
+    user_id = session.get('user_id')
+    if not user_id:
+        return redirect(url_for('login'))
+
+    user = Users.query.get(user_id)
+
+    current_password = request.form.get("current_password")
+    new_password = request.form.get("new_password")
+    confirm_password = request.form.get("confirm_password")
+
+    # Check if current password is correct
+    if not check_password_hash(user.password, current_password):
+        return render_template("account_settings.html", user=user, error="Current password is incorrect.")
+
+    # Check if new passwords match
+    if new_password != confirm_password:
+        return render_template("account_settings.html", user=user, error="New passwords do not match.")
+
+    # Update password
+    user.password = generate_password_hash(new_password, method='pbkdf2:sha256')
+    db.session.commit()
+
+    return render_template("account_settings.html", user=user, success="Password changed successfully.")
 
 if __name__ == "__main__":
     app.run(debug=True)
