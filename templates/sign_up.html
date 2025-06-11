@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles.css" rel="stylesheet">
     <title>Sign Up</title>
-    <style>
-        h1 { color: green; }
-        .error { color: red; }
-    </style>
 </head>
-<body>
+<body class="register">
     <nav>
-        <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Create account</a></li>
-        </ul>
     </nav>
-    <h1>Create an account</h1>
+    <h1 class="register-title">Create an account</h1>
 
     {% if error %}
         <p class="error">{{ error }}</p>
     {% endif %}
 
     <form action="/register" method="post">
-        <label for="username">Username:</label>
+        <label for="username" >Username:</label>
         <input type="text" id="username" name="username" required />
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required />

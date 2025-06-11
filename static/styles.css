@@ -91,7 +91,7 @@ a {
     color: #2a4d7f;
 }
 
-a:hover{
+a:hover {
     background-color: #1e3a5f;
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -433,4 +433,8 @@ h3 {
         padding: 20px;
         box-sizing: border-box;
     }
+}
+
+.register {
+    display: flex;
 }
