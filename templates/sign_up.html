@@ -15,12 +15,12 @@
         <p class="error">{{ error }}</p>
     {% endif %}
 
-    <form action="/register" method="post">
-        <label for="username" >Username:</label>
+    <form action="/register" method="post" class="form">
+        <label for="username" class="label">Username:</label>
         <input type="text" id="username" name="username" required />
-        <label for="password">Password:</label>
+        <label for="password" class="label">Password:</label>
         <input type="password" id="password" name="password" required />
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="register-button">Sign Up</button>
     </form>
 </body>
 </html>

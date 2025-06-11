@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles.css" rel="stylesheet">
     <title>Login</title>
     <style>
-        h1 { color: green; }
         .error { color: red; }
     </style>
 </head>
-<body>
+<body class="login">
     <nav>
-        <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Create account</a></li>
-        </ul>
     </nav>
-    <h1>Login to your account</h1>
+    <h1 class="login-title">Login to your account</h1>
     
     {% if error %}
         <p class="error">{{ error }}</p>
     {% endif %}
 
-    <form action="/login" method="post">
-        <label for="username">Username:</label>
+    <form action="/login" method="post" class="form">
+        <label for="username" class="label">Username:</label>
         <input type="text" name="username" id="username" required />
-        <label for="password">Password:</label>
+        <label for="password" class="label">Password:</label>
         <input type="password" name="password" id="password" required />
-        <button type="submit">Login</button>
+        <button type="submit" class="login-button">Login</button>
     </form>
 </body>
 </html>

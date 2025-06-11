@@ -73,7 +73,7 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
             login_user(user)
-            return redirect(url_for("dashboard"))
+            return redirect(url_for("home"))
         else:
             return render_template("login.html", error="Invalid username or password")
 
