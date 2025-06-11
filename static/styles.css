@@ -437,9 +437,9 @@ h3 {
 
 .toast {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20px;
+    right: 20px;
+    transform: none;
     background-color: forestgreen;
     color: white;
     padding: 12px 24px;
