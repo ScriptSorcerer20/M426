@@ -95,7 +95,8 @@ async function title_list(url) {
                 "Gemüselasagne": "/static/images/lasagne.png",
                 "Falafel Wrap": "/static/images/wrap.png",
                 "Hähnchen-Teriyaki mit Gemüse": "/static/images/teriyaki.png",
-                "Ziegenkäse-Salat mit Honig": "/static/images/salat.png"
+                "Ziegenkäse-Salat mit Honig": "/static/images/salat.png",
+                "Pommes Frites": "/static/images/fries.png"
             };
             window.basketItems = window.basketItems.map(item => ({
                 ...item,
