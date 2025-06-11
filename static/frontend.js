@@ -97,7 +97,11 @@ async function title_list(url) {
                 "Hähnchen-Teriyaki mit Gemüse": "/static/images/teriyaki.png",
                 "Ziegenkäse-Salat mit Honig": "/static/images/salat.png"
             };
-
+            window.basketItems = window.basketItems.map(item => ({
+                ...item,
+                image: imageMap[item.title] || item.image
+            }));
+            localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
             const image = imageMap[product.product_name] || "/static/images/quinoa.png";
             dishElement.innerHTML = `
                 <img src="${image}" alt="${product.product_name}">
