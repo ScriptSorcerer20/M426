@@ -47,6 +47,7 @@ function renderBasket(items = window.basketItems) {
             const index = window.basketItems.findIndex(d => d.title === item.title);
             if (index !== -1) {
                 window.basketItems.splice(index, 1);
+                localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
                 renderBasket();
             }
         });
