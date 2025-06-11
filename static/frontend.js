@@ -25,13 +25,14 @@ function openOverlay(data) {
             window.basketItems.push({
                 title: data.title,
                 image: data.image,
-                price: parseFloat(data.price.replace(/[^\d.-]/g, '')), // "6.90 CHF" to 6.90
+                price: parseFloat(data.price.replace(/[^\d.-]/g, '')),
                 quantity: 1
             });
-            alert(`${data.title} wurde dem Warenkorb hinzugefügt.`);
+            showToast(`${data.title} wurde dem Warenkorb hinzugefügt.`);
         } else {
-            alert(`${data.title} ist bereits im Warenkorb.`);
+            showToast(`${data.title} ist bereits im Warenkorb.`);
         }
+
         localStorage.setItem("basketItems", JSON.stringify(window.basketItems)); // <-- Important!
         closeOverlay();
     };
@@ -73,20 +74,31 @@ async function title_list(url) {
         const dayKey = Object.keys(dayObject)[0];
         const products = dayObject[dayKey];
         const dishContainer = allDishElements[dayIndex];
+        const dayTitle = document.querySelectorAll(".menu-day .day-title")[dayIndex];
+        if (dayTitle && products.length > 0) {
+            const firstProductDate = products[0].date;
+            const dayLabel = ["Mo", "Di", "Mi", "Do", "Fr"][dayIndex];
+            dayTitle.textContent = `${dayLabel} – ${firstProductDate}`;
+        }
+
         if (!dishContainer) continue;
         products.forEach(product => {
             const dishElement = document.createElement("div");
             dishElement.className = "dish";
             const imageMap = {
-                "Buddha Bowl": "/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png",
-                "Chili con Carne": "/static/images/Chili%20mit%20Reis%20und%20Käse.png",
-                "Gegrilltes Huehnchen": "/static/images/Gegrilltes%20Hühnchen%20mit%20Kartoffelstampf.png",
-                "Rindfleisch mit Gemuese": "/static/images/Rindfleisch%20mit%20Gemüse%20in%20Sauce.png",
-                "Pommes Frites": "/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png",
-                "gay stress": "/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png",
-                "straight fart": "/static/images/Chili%20mit%20Reis%20und%20Käse.png"
+                "Grillgemüse mit Quinoa": "/static/images/quinoa.png",
+                "Rindergeschnetzeltes mit Rösti": "/static/images/rösti.png",
+                "Kichererbsen-Curry mit Reis": "/static/images/kichererbsen.png",
+                "Spaghetti mit Linsenbolognese": "/static/images/spaghetti.png",
+                "Lachsfilet mit Zitronen-Dill-Sauce": "/static/images/lachs.png",
+                "Süßkartoffel-Burger": "/static/images/burger.png",
+                "Gemüselasagne": "/static/images/lasagne.png",
+                "Falafel Wrap": "/static/images/wrap.png",
+                "Hähnchen-Teriyaki mit Gemüse": "/static/images/teriyaki.png",
+                "Ziegenkäse-Salat mit Honig": "/static/images/salat.png"
             };
-            const image = imageMap[product.product_name] || "/static/images/Buddha%20Bowl%20mit%20frischen%20Zutaten.png";
+
+            const image = imageMap[product.product_name] || "/static/images/quinoa.png";
             dishElement.innerHTML = `
                 <img src="${image}" alt="${product.product_name}">
                 <div class="dish-title">${product.product_name}</div>
@@ -118,9 +130,17 @@ function formatAllergies(allergyObj) {
 
 title_list(json_route).then(r => console.log("successful"))
 
-function updatePage() {
+async function updatePage() {
     const json_route = indexToRoute[currentPageIndex];
-    console.log("Fetching page:", currentPageIndex, json_route);
+    const response = await fetch(json_route);
+    if (!response.ok) return;
+    const data = await response.json();
+    const dates = data.week.map(dayObj => {
+        const dayKey = Object.keys(dayObj)[0];
+        return dayObj[dayKey][0]?.date;
+    }).filter(Boolean);
+    const dateLabel = document.querySelector('.date-label');
+    dateLabel.textContent = `${dates[0]} – ${dates[dates.length - 1]}`;
     title_list(json_route);
     document.querySelector('.pagination-next-button').disabled = currentPageIndex === 1;
     document.querySelector('.pagination-back-button').disabled = currentPageIndex === 2;
@@ -169,3 +189,15 @@ document.querySelector(".add-to-cart").onclick = () => {
     }
     closeOverlay();
 };
+
+function showToast(message = "Zum Warenkorb hinzugefügt") {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.remove("hidden");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+    }, 2000);
+}
