@@ -4,11 +4,11 @@
       "day1": [
         {
           "product_id": 1,
-          "product_name": "gay stress",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Grillgemüse mit Quinoa",
+          "product_description": "Frisch gegrilltes Gemüse auf fluffigem Quinoa, mit Kräuteröl verfeinert.",
+          "product_price": 8.50,
+          "kilocalories": 420,
+          "kilojoules": 1758,
           "allergy": [
             {
               "milk": false,
@@ -16,21 +16,22 @@
               "peanuts": false,
               "eggs": false,
               "fish": false,
-              "sesame": false,
+              "sesame": true,
               "soy": false,
               "three_nuts": false
             }
           ]
-        },{
+        },
+        {
           "product_id": 2,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Rindergeschnetzeltes mit Rösti",
+          "product_description": "Zartes Rindfleisch in Rahmsauce mit knusprigem Rösti.",
+          "product_price": 11.90,
+          "kilocalories": 590,
+          "kilojoules": 2469,
           "allergy": [
             {
-              "milk": false,
+              "milk": true,
               "gluten": false,
               "peanuts": false,
               "eggs": false,
@@ -47,11 +48,11 @@
       "day2": [
         {
           "product_id": 1,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Kichererbsen-Curry mit Reis",
+          "product_description": "Aromatisches Curry aus Kichererbsen, Tomaten und Kokosmilch.",
+          "product_price": 9.20,
+          "kilocalories": 510,
+          "kilojoules": 2134,
           "allergy": [
             {
               "milk": false,
@@ -60,21 +61,22 @@
               "eggs": false,
               "fish": false,
               "sesame": false,
-              "soy": false,
+              "soy": true,
               "three_nuts": false
             }
           ]
-        },{
+        },
+        {
           "product_id": 2,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Spaghetti mit Linsenbolognese",
+          "product_description": "Hausgemachte Bolognese aus roten Linsen, serviert mit Vollkornspaghetti.",
+          "product_price": 8.80,
+          "kilocalories": 470,
+          "kilojoules": 1967,
           "allergy": [
             {
               "milk": false,
-              "gluten": false,
+              "gluten": true,
               "peanuts": false,
               "eggs": false,
               "fish": false,
@@ -90,18 +92,18 @@
       "day3": [
         {
           "product_id": 1,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Lachsfilet mit Zitronen-Dill-Sauce",
+          "product_description": "Gedämpftes Lachsfilet mit cremiger Zitronen-Dill-Sauce und Wildreis.",
+          "product_price": 13.50,
+          "kilocalories": 630,
+          "kilojoules": 2637,
           "allergy": [
             {
-              "milk": false,
+              "milk": true,
               "gluten": false,
               "peanuts": false,
               "eggs": false,
-              "fish": false,
+              "fish": true,
               "sesame": false,
               "soy": false,
               "three_nuts": false
@@ -110,19 +112,19 @@
         },
         {
           "product_id": 2,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Süßkartoffel-Burger",
+          "product_description": "Süßkartoffel-Patty mit Avocado, Rucola und Joghurtdressing im Vollkornbrötchen.",
+          "product_price": 9.90,
+          "kilocalories": 540,
+          "kilojoules": 2261,
           "allergy": [
             {
-              "milk": false,
-              "gluten": false,
+              "milk": true,
+              "gluten": true,
               "peanuts": false,
-              "eggs": false,
+              "eggs": true,
               "fish": false,
-              "sesame": false,
+              "sesame": true,
               "soy": false,
               "three_nuts": false
             }
@@ -134,15 +136,15 @@
       "day4": [
         {
           "product_id": 1,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Gemüselasagne",
+          "product_description": "Lasagne mit Zucchini, Aubergine und Tomatensauce, mit Käse überbacken.",
+          "product_price": 10.00,
+          "kilocalories": 610,
+          "kilojoules": 2552,
           "allergy": [
             {
-              "milk": false,
-              "gluten": false,
+              "milk": true,
+              "gluten": true,
               "peanuts": false,
               "eggs": false,
               "fish": false,
@@ -151,21 +153,22 @@
               "three_nuts": false
             }
           ]
-        },{
+        },
+        {
           "product_id": 2,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Falafel Wrap",
+          "product_description": "Wrap mit Falafelbällchen, Hummus und frischem Salat.",
+          "product_price": 8.20,
+          "kilocalories": 480,
+          "kilojoules": 2009,
           "allergy": [
             {
               "milk": false,
-              "gluten": false,
+              "gluten": true,
               "peanuts": false,
               "eggs": false,
               "fish": false,
-              "sesame": false,
+              "sesame": true,
               "soy": false,
               "three_nuts": false
             }
@@ -177,40 +180,41 @@
       "day5": [
         {
           "product_id": 1,
-          "product_name": "Pommes Frites",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Hähnchen-Teriyaki mit Gemüse",
+          "product_description": "Hähnchenbrust in Teriyakisauce mit gebratenem Gemüse und Jasminreis.",
+          "product_price": 11.20,
+          "kilocalories": 570,
+          "kilojoules": 2385,
           "allergy": [
             {
               "milk": false,
-              "gluten": false,
+              "gluten": true,
               "peanuts": false,
               "eggs": false,
               "fish": false,
               "sesame": false,
-              "soy": false,
+              "soy": true,
               "three_nuts": false
             }
           ]
-        },{
+        },
+        {
           "product_id": 2,
-          "product_name": "straight fart",
-          "product_description": "Sehr populär",
-          "product_price": 9.99,
-          "kilocalories": 312,
-          "kilojoules": 1305.41,
+          "product_name": "Ziegenkäse-Salat mit Honig",
+          "product_description": "Bunter Blattsalat mit karamellisiertem Ziegenkäse, Walnüssen und Honigdressing.",
+          "product_price": 9.60,
+          "kilocalories": 450,
+          "kilojoules": 1883,
           "allergy": [
             {
-              "milk": false,
+              "milk": true,
               "gluten": false,
               "peanuts": false,
               "eggs": false,
               "fish": false,
               "sesame": false,
               "soy": false,
-              "three_nuts": false
+              "three_nuts": true
             }
           ]
         }
@@ -218,4 +222,3 @@
     }
   ]
 }
-
