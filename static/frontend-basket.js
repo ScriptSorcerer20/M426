@@ -97,6 +97,7 @@ function closeOverlay() {
 }
 
 document.querySelector(".bestellung").onclick = () => {
+    //this round down the total and gives it to the function
     open_payment_overlay(Math.round(item_total * 100) / 100)
 }
 
