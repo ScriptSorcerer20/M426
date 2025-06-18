@@ -1,5 +1,5 @@
 ﻿window.basketItems = JSON.parse(localStorage.getItem("basketItems") || "[]");
-window.basketItems = JSON.parse(localStorage.getItem("basketItems") || "[]");
+
 localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
 let item_total = 0;
 
