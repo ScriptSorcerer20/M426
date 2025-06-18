@@ -106,21 +106,13 @@ function sendOrderData() {
     form.method = 'POST'; // or 'GET'
     form.action = '/basket'; // your server route
 
-    const data = []
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = "order_list";
+    input.value = window.basketItems;
+    input.id = "order_list"
+    form.appendChild(input);
 
-    // Add data as hidden inputs
-    const dishes = document.querySelectorAll(".dish-in-basket");
-    dishes.forEach((dish, i) => {
-        data.push(window.basketItems[i])
-    });
-
-    for (const key in data) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = data[key];
-        form.appendChild(input);
-    }
 
     // Append and submit
     document.body.appendChild(form);
