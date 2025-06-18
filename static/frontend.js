@@ -206,3 +206,18 @@ function showToast(message = "Zum Warenkorb hinzugefügt") {
         toast.classList.add("hidden");
     }, 2000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userMenu = document.querySelector('.user-menu');
+    const btn = userMenu.querySelector('.user-menu__btn');
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        userMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+        userMenu.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') userMenu.classList.remove('open');
+    });
+});
