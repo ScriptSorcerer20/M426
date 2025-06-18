@@ -1,6 +1,7 @@
 ﻿window.basketItems = JSON.parse(localStorage.getItem("basketItems") || "[]");
 window.basketItems = JSON.parse(localStorage.getItem("basketItems") || "[]");
 localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
+let item_total = 0;
 
 function renderBasket(items = window.basketItems) {
     const basketWrapper = document.querySelector(".basket-wrapper");
@@ -64,7 +65,25 @@ function renderBasket(items = window.basketItems) {
             total += window.basketItems[i].price * quantity;
         });
         totalDisplay.textContent = `Total: ${(total).toFixed(2)} CHF`;
+        item_total = total
     }
+}
+
+
+
+function open_payment_overlay(total) {
+
+    console.log(total)
+    document.getElementById('overlayTitle').innerText = total;
+    document.getElementById('dishOverlay').classList.remove('hidden');
+}
+
+function closeOverlay() {
+    document.getElementById('dishOverlay').classList.add('hidden');
+}
+
+document.querySelector(".bestellung").onclick = () => {
+    open_payment_overlay(item_total)
 }
 
 localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
