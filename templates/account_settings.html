@@ -91,8 +91,13 @@
         <h1>Settings</h1>
     </header>
     <section>
+        <p><strong>Email:</strong> {{ user.email }} <a href="#" onclick="toggleEmailForm()">Change</a></p>
         <p><strong>Username:</strong> {{ user.username }}</p>
         <p><strong>Password:</strong> ********** <a href="#" onclick="togglePasswordForm()">Change</a></p>
+        <p><strong>
+            Enable MFA:
+            <input type="checkbox" id="enable_mfa" name="enable_mfa" {% if user.mfa_enabled %} checked {% endif %}>
+        </strong></p>
 
         {% if error %}
         <p class="error">{{ error }}</p>
@@ -100,6 +105,17 @@
         {% if success %}
         <p class="success">{{ success }}</p>
         {% endif %}
+
+
+        <div id="change-email-form" style="display: none; margin-top: 20px;">
+            <form action="/settings" method="post">
+                <label for="enter_password">Current Password:</label>
+                <input type="password" id="enter_password" name="enter_password" required><br><br>
+                <label for="new_password">New Email:</label>
+                <input type="password" id="new_email" name="new_email" required><br><br>
+                <button type="submit">Change Email</button>
+            </form>
+        </div>
 
         <div id="change-password-form" style="display: none; margin-top: 20px;">
             <form action="/settings" method="post">
@@ -125,6 +141,28 @@
                 form.style.display = "none";
             }
         }
+
+        function toggleEmailForm() {
+            const form = document.getElementById('change-email-form');
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+
+        document.getElementById('enable_mfa').addEventListener('change', function () {
+            fetch('{{ url_for("toggle_mfa") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({enable_mfa: this.checked})
+            }).then(response => response.json())
+                .then(data => {
+                    alert(data.message);  // show feedback
+                });
+        });
     </script>
 </div>
 </body>

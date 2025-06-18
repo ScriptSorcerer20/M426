@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<button class="back-button" onclick="window.location.href='/'">← Zurück</button>
-<div class="basket-wrapper"></div>
-<h3 id="total">Total: 0 CHF</h3>
-<button class="bestellung">Bestellen</button>
-</body>
-<script src="/static/frontend-basket.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="/static/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button class="back-button" onclick="window.location.href='/'">← Zurück</button>
+        <div class="basket-wrapper"></div>
+        <h3 id="total">Total: 0 CHF</h3>
+        <button class="bestellung">Bestellen</button>
+        <div class="dish-overlay hidden" id="dishOverlay">
+            <div class="bestellung-detail-card">
+                <button class="back-button" onclick="closeOverlay()">Zurück</button>
+                <h2>Twint Zahlung</h2>
+                <img src="../static/images/apple-icon.png" alt="an image of a qr code" class="qr-code">
+                <h2 class="dish-detail-title" id="overlayTitle">Titel</h2>
+                <button class="add-to-cart">Warenkorb Bestellen</button>
+            </div>
+        </div>
+    </body>
+    <script src="/static/frontend-basket.js"></script>
 </html>
