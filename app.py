@@ -9,6 +9,7 @@ from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from sqlalchemy.testing.suite.test_reflection import users
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy.dialects.sqlite import JSON
 import os
 
 # Initialize Flask app
@@ -45,6 +46,23 @@ app.config.update(
     MAIL_USERNAME="familie.braendli@gmail.com",
     MAIL_PASSWORD="snphriglmpowfaix",
 )
+
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship("Users", backref="orders")
+
+class OrderProduct(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey('order.id'))
+    date = db.Column(db.String(100))
+    product_name = db.Column(db.String(100), nullable=False)
+    product_description = db.Column(db.String(255))
+    product_price = db.Column(db.Float, nullable=False)
+    kilocalories = db.Column(db.Integer)
+    kilojoules = db.Column(db.Float)
+    allergy = db.Column(JSON)
+    order = db.relationship("Order", backref="items")
 
 # Create database
 with app.app_context():
@@ -203,7 +221,9 @@ def logout():
 
 
 @app.route("/basket", methods=["GET", "POST"])
+@login_required
 def basket():
+    order = request.form.get("order")
     return render_template("/basket.html")
 
 

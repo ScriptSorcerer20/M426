@@ -202,12 +202,13 @@ img {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 998;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
+
 
 .dish-overlay.hidden {
     display: none;
@@ -226,6 +227,25 @@ img {
     text-align: center;
     z-index: 2500;
     overflow-y: auto;
+}
+
+.bestellung-detail-card {
+    position: fixed;
+    height: 55vh;
+    width: 15vw;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 2500;
+    overflow-y: auto;
+}
+
+.qr-code {
+    height: 140px;
+    width: 140px
 }
 
 .dish-image {
