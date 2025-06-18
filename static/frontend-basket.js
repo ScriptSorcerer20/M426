@@ -5,13 +5,27 @@ let item_total = 0;
 
 function renderBasket(items = window.basketItems) {
     const basketWrapper = document.querySelector(".basket-wrapper");
+    const imageMap = {
+                "Grillgemüse mit Quinoa": "/static/images/quinoa.png",
+                "Rindergeschnetzeltes mit Rösti": "/static/images/rösti.png",
+                "Kichererbsen-Curry mit Reis": "/static/images/kichererbsen.png",
+                "Spaghetti mit Linsenbolognese": "/static/images/spaghetti.png",
+                "Lachsfilet mit Zitronen-Dill-Sauce": "/static/images/lachs.png",
+                "Süßkartoffel-Burger": "/static/images/burger.png",
+                "Gemüselasagne": "/static/images/lasagne.png",
+                "Falafel Wrap": "/static/images/wrap.png",
+                "Hähnchen-Teriyaki mit Gemüse": "/static/images/teriyaki.png",
+                "Ziegenkäse-Salat mit Honig": "/static/images/salat.png",
+                "Pommes Frites": "/static/images/fries.png"
+            };
     const totalDisplay = document.getElementById("total");
     basketWrapper.innerHTML = "";
     items.forEach(item => {
+        const imgSrc = imageMap[item.title] || item.image;
         const dish = document.createElement("div");
         dish.className = "dish-in-basket";
         dish.innerHTML = `
-            <img src="${item.image}" alt="${item.title}">
+      <img src="${imgSrc}" alt="${item.title}">
             <div class="dish-basket-title">${item.title}</div>
             <div class="quantity-controls">
                 <button class="quantity-decrease">−</button>
