@@ -7,20 +7,28 @@
     <title>Sign Up</title>
 </head>
 <body class="register">
-    <nav>
-    </nav>
-    <h1 class="register-title">Create an account</h1>
+<nav>
+</nav>
+<h1 class="register-title">Create an account</h1>
 
+<form action="/register" method="post" class="form">
+    <label for="email" class="label">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <label for="username" class="label">Username:</label>
+    <input type="text" id="username" name="username" required/>
+    <label for="password" class="label">Password:</label>
+    <input type="password" id="password" name="password" required/>
     {% if error %}
-        <p class="error">{{ error }}</p>
+    <p style="color: red" class="error">{{ error }}</p>
     {% endif %}
 
-    <form action="/register" method="post" class="form">
-        <label for="username" class="label">Username:</label>
-        <input type="text" id="username" name="username" required />
-        <label for="password" class="label">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit" class="register-button">Sign Up</button>
-    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% set category, message = messages[0] %}
+    <div style="color: green" class="flash-message {{ category }}">{{ message }}</div>
+    {% endif %}
+    {% endwith %}
+    <button type="submit" class="register-button">Sign Up</button>
+</form>
 </body>
 </html>
