@@ -231,17 +231,21 @@ img {
 
 .bestellung-detail-card {
     position: fixed;
-    height: 30vh;
+    height: 55vh;
+    width: 15vw;
     background-color: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
     z-index: 2500;
     overflow-y: auto;
+}
+
+.qr-code {
+    height: 140px;
+    width: 140px
 }
 
 .dish-image {

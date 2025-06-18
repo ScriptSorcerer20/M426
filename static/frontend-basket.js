@@ -97,7 +97,7 @@ function closeOverlay() {
 }
 
 document.querySelector(".bestellung").onclick = () => {
-    open_payment_overlay(item_total)
+    open_payment_overlay(Math.round(item_total * 100) / 100)
 }
 
 localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
