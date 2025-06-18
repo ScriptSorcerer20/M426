@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect, send_file,
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy.dialects.sqlite import JSON
 import os
 
 # Initialize Flask app
@@ -21,6 +22,23 @@ class Users(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(250), unique=True, nullable=False)
     password = db.Column(db.String(250), nullable=False)
+
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship("Users", backref="orders")
+
+class OrderProduct(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey('order.id'))
+    date = db.Column(db.String(100))
+    product_name = db.Column(db.String(100), nullable=False)
+    product_description = db.Column(db.String(255))
+    product_price = db.Column(db.Float, nullable=False)
+    kilocalories = db.Column(db.Integer)
+    kilojoules = db.Column(db.Float)
+    allergy = db.Column(JSON)
+    order = db.relationship("Order", backref="items")
 
 # Create database
 with app.app_context():
@@ -93,7 +111,9 @@ def logout():
     return redirect(url_for("home"))
 
 @app.route("/basket", methods=["GET", "POST"])
+@login_required
 def basket():
+    order = request.form.get("order")
     return render_template("/basket.html")
 
 @app.route('/settings')
