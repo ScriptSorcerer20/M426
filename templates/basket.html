@@ -17,7 +17,11 @@
                 <h2>Twint Zahlung</h2>
                 <img src="../static/images/apple-icon.png" alt="an image of a qr code" class="qr-code">
                 <h2 class="dish-detail-title" id="overlayTitle">Titel</h2>
-                <button class="add-to-cart">Warenkorb Bestellen</button>
+                <form action="POST" method="/basket">
+                    <label for="order_date">Birthday:</label>
+                    <input type="date" id="order_date">
+                </form>
+                <button class="add-to-cart" onclick="sendOrderData()">Warenkorb Bestellen</button>
             </div>
         </div>
     </body>

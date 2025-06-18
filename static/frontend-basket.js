@@ -101,5 +101,33 @@ document.querySelector(".bestellung").onclick = () => {
     open_payment_overlay(Math.round(item_total * 100) / 100)
 }
 
+function sendOrderData() {
+    const form = document.createElement('form');
+    form.method = 'POST'; // or 'GET'
+    form.action = '/basket'; // your server route
+
+    const data = []
+
+    // Add data as hidden inputs
+    const dishes = document.querySelectorAll(".dish-in-basket");
+    dishes.forEach((dish, i) => {
+        data.push(window.basketItems[i])
+    });
+
+    for (const key in data) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+    }
+
+    // Append and submit
+    document.body.appendChild(form);
+    form.submit()
+    document.getElementById('order_date').showPicker();
+    console.log(form.value)
+}
+
 localStorage.setItem("basketItems", JSON.stringify(window.basketItems));
 renderBasket();
